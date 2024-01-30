@@ -214,8 +214,8 @@ const LoginScreen = () => {
             {/* Custom Alert */}
             <CustomAlert
               visible={showAlert}
-              heading="Alert"
-              message="Fill the all input" 
+              heading="Login"
+              message="Fill the all fields." 
               onClose={() => setShowAlert(false)} 
             />
 

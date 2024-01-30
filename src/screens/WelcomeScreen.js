@@ -1,16 +1,27 @@
-import { View, Text, Image, Animated, Easing, StyleSheet,TouchableOpacity, SafeAreaView } from 'react-native';
-import React, { useEffect, useRef } from 'react';
+import { View, Text, Image, Animated, Easing, StyleSheet,TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation,CommonActions } from '@react-navigation/native';
 import Animation, { FadeIn, FadeInDown, FadeInUp, FadeOut } from 'react-native-reanimated';
 
 export default function WelcomeScreen() {
-
+  const navigation = useNavigation();
   const scaleValue = useRef(new Animated.Value(0)).current;
+  
+  // handeling back function
+  const handleLogin = () => {
+    navigation.navigate('Login')
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: 'Login' }],
+      })
+    );
+  }
 
   useEffect(() => {
     Animated.timing(scaleValue, {
@@ -26,12 +37,9 @@ export default function WelcomeScreen() {
     outputRange: [0, 1, 1.2],
   });
 
-  const navigation = useNavigation();
-
-
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-
+      <StatusBar style="black" />
       {/* Logo */}
       <View style={{ marginBottom: 30 }}>
         <Animation.Image
@@ -67,7 +75,7 @@ export default function WelcomeScreen() {
       entering={FadeInDown.delay(1200).duration(1000).springify()}
       >
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}
+        onPress={handleLogin}
         style={{ marginTop: 30, display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', right: -100 }}>
         <Text style={{ fontWeight: 'bold', color: 'white', fontSize: wp(5) }}>
           NEXT

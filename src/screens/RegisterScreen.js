@@ -323,8 +323,8 @@ const RegisterScreen = () => {
           {/* custom alert */}
           <CustomAlert
             visible={showAlert}
-            heading='Alert'
-            message="Fill the all input"
+            heading='Register'
+            message="Fill the all fields."
             onClose={() => setShowAlert(false)}
           />
 
