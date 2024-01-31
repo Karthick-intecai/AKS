@@ -44,6 +44,7 @@ const ServiceScreen = () => {
             <View style={{ height: hp(12), width: wp(95) }} className=' bg-slate-200 rounded-lg flex-row items-center justify-evenly'>
               <Image
                 style={{ width: wp(15), height: hp(7) }}
+                className='-ml-3'
                 source={require('../../assets/images/Note.png')} />
               <View className=' items-center space-y-1'>
                 <Text style={{ fontSize: wp(4.5) }} className='font-semibold text-black'>IT Filing</Text>
@@ -57,6 +58,10 @@ const ServiceScreen = () => {
                 style={{ height: hp(4), width: wp(18) }} className='flex justify-center rounded-lg bg-green-500'>
                 <Text style={{ fontSize: wp(3.5) }} className='text-center font-semibold text-white'>File ITR</Text>
               </TouchableOpacity>
+              <Image
+                style={{ width: wp(20), height: hp(7) }}
+                className='absolute right-0 self-end -z-10 rounded-lg'
+                source={require('../../assets/images/Cup_and_notebook.png')} />
             </View>
 
           </View>

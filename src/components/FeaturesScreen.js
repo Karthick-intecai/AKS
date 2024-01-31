@@ -14,7 +14,7 @@ const ServiceScreen = () => {
         <SafeAreaView className='flex-1 items-center top-5'>
             <StatusBar style="Auto" />
             <ScrollView>
-                <View className='space-y-7'>
+                <View style={{width:wp(100)}} className='space-y-7'>
                     {/* Top Contant */}
                     <View className='flex-row justify-between mx-5 items-center'>
                         <Image
@@ -44,11 +44,16 @@ const ServiceScreen = () => {
                         <View style={{ height: hp(12), width: wp(95) }} className=' bg-slate-200 rounded-lg flex-row items-center justify-evenly'>
                             <Image
                                 style={{ width: wp(15), height: hp(7) }}
+                                className='-ml-10'
                                 source={require('../../assets/images/Futcher.png')} />
-                            <View className=' items-center space-y-1'>
+                            <View className=' items-center space-y-1 -ml-10'>
                                 <Text style={{ fontSize: wp(4.5) }} className='font-semibold text-black'>IT Filing</Text>
                                 <Text style={{ fontSize: wp(3.1) }} className=' font-medium underline text-gray-500'>Effortless e-filing Excellence</Text>
                             </View>
+                            <Image
+                                style={{ width: wp(20), height: hp(7) }}
+                                className='self-end absolute right-0 rounded-lg'
+                                source={require('../../assets/images/Cup_and_notebook.png')} />
                         </View>
                     </View>
 
