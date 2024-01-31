@@ -86,8 +86,12 @@ const RegisterScreen = () => {
       }
 
       // password validation
-      if (!validatePassword(password)) {
-        setPasswordError('Password must have at least one uppercase letter, one lowercase letter, one numeric digit, one special character, and a minimum length of 8 characters. Please try again.')
+      if (password.length < 8) {
+        setPasswordError ("Password must be at least 8 characters long.");
+        return;
+      }
+      else if (!validatePassword(password)) {
+        setPasswordError('Password must contain at least one uppercase letter, one lowercase letter, one special character and one digit.')
         return;
       }
 

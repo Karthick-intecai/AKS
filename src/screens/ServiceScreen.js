@@ -43,7 +43,7 @@ const ServiceScreen = () => {
           <View className=' items-center'>
             <View style={{ height: hp(12), width: wp(95) }} className=' bg-slate-200 rounded-lg flex-row items-center justify-evenly'>
               <Image
-                style={{ width: wp(18), height: hp(9) }}
+                style={{ width: wp(15), height: hp(7) }}
                 source={require('../../assets/images/Note.png')} />
               <View className=' items-center space-y-1'>
                 <Text style={{ fontSize: wp(4.5) }} className='font-semibold text-black'>IT Filing</Text>
