@@ -18,11 +18,9 @@ import Dashbord from '../screens/Dashbord';
 const Stack = createNativeStackNavigator();
 
 const AppNavigation = () => {
-  
-
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Welcome'>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName='Main'>
         <Stack.Screen name="FirstHome" component={FirstHomeScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen}/>
         <Stack.Screen name="Login" component={LoginScreen} />
